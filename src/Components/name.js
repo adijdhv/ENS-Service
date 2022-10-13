@@ -4,6 +4,7 @@ import Web3 from 'web3';
 import detectEthereumProvider from '@metamask/detect-provider';
 import { ethers } from 'ethers';
 import { useState } from 'react';
+import "../css/input.css"
 const abi = require("../abi.json")
 const { ethereum } = window
 //const ethers = require('ethers')
@@ -129,15 +130,59 @@ const Name = () => {
 
 
     return (
-        <div  className='relative mt-5'>
-            <button onClick={connection}> Mint</button>
-            <div className="input">
-                <input type="Enter the name" onChange={e => setName(e.target.value)} />
+        <div>
+        <div  className="relative w-2/4 self-center mx-auto text-center justify-center mt-5">
+           
+            {/* <div className="input">
+                <input type="Enter the name" className="border " onChange={e => setName(e.target.value)} />
             </div>
             <div className="button">
-                <input type="text" onChange={e => { setensname(e.target.value) }} />
-                <button onClick={getname}> get Wallet Address</button>
-            </div>
+                <input type="text" className="border" onChange={e => { setensname(e.target.value) }} />                
+            </div> */}
+  
+            <div class="flex mt-2 flex-col ">
+        <label className="block mb-2 self-start text-left w-full text-sm font-semibold ">Mint Name </label>
+       <div className="flex flex-row">
+        <input
+                  type="text"
+                  name="name"                
+                  className="border boxborder rounded-lg w-full px-2 py-1"
+                  placeholder=""
+                  onChange={e => setName(e.target.value)}
+                  required
+                />
+                <button  className="mint-button text-sm rounded-lg -ml-5 px-10 py-1" onClick={connection}> Mint</button>
+                </div>
+     </div>
+
+            <div class="flex mt-4 flex-col ">
+     <label className="block mb-2 self-start text-left w-full text-sm font-semibold ">Get Wallet Address </label>
+     <div className="flex flex-row">
+     <input
+            type="text"
+            name="description" 
+            className="border boxborder rounded-lg w-full px-2 py-1"  
+            placeholder=""
+            onChange={e => { setensname(e.target.value) }}
+            required
+          />
+          <button  className="mint-button w-48 rounded-lg px-2 -ml-5 text-sm py-1" onClick={getname}> Get Wallet Address</button> 
+          </div>
+    </div> 
+    
+    {/* <div className="self-center text-center justify-center">
+    <div className=" mt-10">
+    <button  className="bg-gray-400 text-white m-2 px-10 py-1 rounded-lg" onClick={connection}> Mint</button>
+    <button  className="border border-black px-10 m-2 py-1 bg-white rounded-lg text-sm" onClick={getname}>Cancel</button> 
+    </div> 
+
+<div className="mt-1">
+    <button  className="mint-button rounded-lg m-2 px-10 py-1" onClick={connection}> Mint</button>
+    <button  className="border border-black px-10 m-2 py-1 bg-white rounded-lg text-sm" onClick={getname}> Get Wallet Address</button> 
+    </div>
+    </div> */}
+
+        </div>
         </div>
     )
 }

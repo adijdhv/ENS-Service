@@ -1,0 +1,8 @@
+.mint-button {
+  color: white;
+  background: linear-gradient(to right, #c3044a, #fc74a1)!important;;
+  text-align: center;
+  /* padding: 5px 10px; */
+  /* margin: 10px !important; */
+  display: inline-block;
+}
